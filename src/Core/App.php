@@ -102,8 +102,8 @@ class App
             ->setHttpHandlers()
             ->setViewEngine()
             ->runServiceProviders('runtime');
-            
             // ->setDatabaseConnection()
+
         return $app;
     }
 
