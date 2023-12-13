@@ -100,10 +100,10 @@ class App
         $app->loadConfig()
             ->runServiceProviders('boot')
             ->setHttpHandlers()
-            // ->setDatabaseConnection()
             ->setViewEngine()
             ->runServiceProviders('runtime');
-
+            
+            // ->setDatabaseConnection()
         return $app;
     }
 
