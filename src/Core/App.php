@@ -88,7 +88,7 @@ class App
     /**
      * bootstrap es el metodo que inicia la aplicacion
      * en la cual usamos el patron singleton para crear
-     * una instancia de App
+     * una instancia de App 
      * @param string $root
      */
     public static function bootstrap(string $root)
