@@ -1,0 +1,48 @@
+{
+    "name": "baezeta/php_miniframe",
+    "description": "Inspired by Laravel mini Framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fernando Baeza",
+            "email": "fbaezahurtado@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        },
+        "files": [
+            "src/Core/Helpers/app.php",
+            "src/Core/Helpers/http.php",
+            "src/Core/Helpers/session.php",
+            "src/Core/Helpers/strings.php",
+            "src/Core/Helpers/resources.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "symfony/console": "^6.3",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.23",
+        "phpunit/phpunit": "^10.4",
+        "phpstan/phpstan": "^1.10",
+        "symfony/var-dumper": "^6.3",
+        "friendsofphp/php-cs-fixer": "^3.38"
+    },
+    "scripts": {
+        "auto": "composer dump-autoload -o",
+        "tests": "phpunit --color=always --testdox tests/",
+        "stan": "vendor/bin/phpstan analyse src --level 5",
+        "fixer": "php ./vendor/bin/php-cs-fixer fix src/ --diff",
+        "fixer-test": "php ./vendor/bin/php-cs-fixer fix tests/ --diff"
+    }
+}
