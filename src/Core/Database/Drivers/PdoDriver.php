@@ -36,6 +36,6 @@ class PdoDriver implements DatabaseDriver
 
     public function all()
     {
-        dd('DB::all() return this');
+        return 'all';
     }
 }

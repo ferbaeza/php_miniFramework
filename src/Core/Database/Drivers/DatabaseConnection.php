@@ -36,7 +36,6 @@ class DatabaseConnection
     public function statement(string $query, array $binds = []): array
     {
         $statement = $this->prepare($query);
-        // dd($statement, $binds);
         $response = $this->exec($statement, $binds);
         return $response;
     }
@@ -69,12 +68,11 @@ class DatabaseConnection
         return $this->statement($sql, $values);
     }
 
-    // public function delete($table, string $columns, string $binds, array $values = [])
-    // {
-    //     dd($columns, $binds, $values);
-    //     $sql = "DELETE FROM $table WHERE ($columns) VALUES ($binds)";
-    //     return $this->statement($sql, $values);
-    // }
+    public function delete($table, string $columns, string $binds, array $values = [])
+    {
+        $sql = "DELETE FROM $table WHERE ($columns) VALUES ($binds)";
+        return $this->statement($sql, $values);
+    }
 
     public function all(?string $table = null)
     {
@@ -106,7 +104,6 @@ class DatabaseConnection
 
     public function where(...$params)
     {
-        dd($params);
         /** @phpstan-ignore-next-line */
         match(count($params)) {
             2 => list($column, $value) = $params,
